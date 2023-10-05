@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cron = require("node-cron");
 
 const { PORT } = require("../src/config/serverConfig");
 const { sendEmail } = require("./services/email-service");
@@ -18,6 +19,10 @@ const setupAndServer = () => {
   //   "errer.com",
   //   "Hi my name is mukesh kumar"
   // );
+
+  cron.schedule("* * * * *", () => {
+    console.log("running a task every minute");
+  });
 };
 
 setupAndServer();
