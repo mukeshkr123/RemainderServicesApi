@@ -62,9 +62,11 @@ const subscribeEvents = async (payload) => {
       break;
   }
 };
+
 module.exports = {
   sendBasicEmail,
   fetchPendingEmail,
   createNotification,
   updateTicket,
+  subscribeEvents,
 };
